@@ -1,0 +1,1 @@
+2024-05-27 14:40:24.708 [http-nio-8080-exec-8] ERROR by.quantumquartet.quanthink.security.JwtAuthEntryPoint - Unauthorized error: Bad credentials
