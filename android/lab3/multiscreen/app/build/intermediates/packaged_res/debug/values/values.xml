@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="ic_launcher_background">#F4BF59</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="action_settings">Settings</string>
+    <string name="app_name">Куда бы поехать в отпуск?</string>
+    <string name="can">Канары</string>
+    <string name="cur">Курилы</string>
+    <string name="enjoy">Enjoy yourself!</string>
+    <string name="mal">Мальдивы</string>
+    <string name="phil">Филиппины</string>
+    <style name="Base.Theme.Screens" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.Screens" parent="Base.Theme.Screens"/>
+</resources>

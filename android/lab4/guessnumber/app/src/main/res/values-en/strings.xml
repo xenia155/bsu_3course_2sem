@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">lab4-task3</string>
+    <string name="behind">The Number is More than the entered one!</string>
+    <string name="ahead">The Number is Less than the entered one!</string>
+    <string name="hit">Correct! You tried %d times!</string>
+    <string name="input_value">Enter the number!</string>
+    <string name="play_more">Play again!</string>
+    <string name="try_to_guess">Try to guess the number (1 &#8211; 100)! Attention! You have only 10 tries!</string>
+    <string name="error">Incorrect input!</string>
+    <string name="empty_entry">You havent entered the number!</string>
+    <string name="congratulations">You won!</string>
+    <string name="exit">Exit</string>
+    <string name="regrets">Lose!</string>
+    <string name="regret_message">You\'ve lost! Try again!</string>
+</resources>

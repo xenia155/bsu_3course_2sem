@@ -1,0 +1,13 @@
+<resources>
+    <string name="try_to_guess">Try to guess the number(1 &#8211; 200)</string>
+    <string name="guess">Guess</string>
+    <string name="behind">Number is less than the entered one!</string>
+    <string name="ahead">Number is more than the entered one!</string>
+    <string name="hit">Yep, this is it!</string>
+    <string name="input_value">Enter the number</string>
+    <string name="play_more">Play more</string>
+    <string name="error_empty_str">You have entered nothing!</string>
+    <string name="error_too_big">You have entered the number that is more than 200!</string>
+    <string name="error_too_small">You have entered the number that is less than 1!</string>
+
+</resources>

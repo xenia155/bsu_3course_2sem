@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">lab4-task3</string>
+    <string name="behind">Загаданное число больше введенного</string>
+    <string name="ahead">Загаданное число меньше введенного</string>
+    <string name="hit">В точку! Вы потратили %d попыток!</string>
+    <string name="input_value">Ввести значение</string>
+    <string name="play_more">Сыграть еще</string>
+    <string name="try_to_guess">Попробуйте угадать число (1 &#8211; 100). У вас 10 попыток.</string>
+    <string name="error">Неверный ввод!</string>
+    <string name="empty_entry">Вы не ввели число, попробуйте еще раз</string>
+    <string name="congratulations">Вы выиграли!</string>
+    <string name="exit">Выйти</string>
+    <string name="regrets">Проиграли!</string>
+    <string name="regret_message">Вы проиграли! Попробуйте еще раз!</string>
+</resources>

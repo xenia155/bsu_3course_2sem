@@ -1,0 +1,37 @@
+R_DEF: Internal format may change without notice
+local
+anim flicker
+anim increase
+color black
+color ic_launcher_background
+color white
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+drawable question
+id DialogView
+id button1
+id button2
+id editTextNumber
+id imageView
+id try_to_guess
+layout activity_main
+layout dialog
+mipmap ic_launcher
+mipmap ic_launcher_foreground
+mipmap ic_launcher_round
+string DialogText
+string ahead
+string behind
+string error_empty_str
+string error_too_big
+string error_too_small
+string game_over
+string guess
+string hit
+string input_value
+string play_more
+string try_to_guess
+style Base.Theme.Task31
+style Theme.Task31
+xml backup_rules
+xml data_extraction_rules

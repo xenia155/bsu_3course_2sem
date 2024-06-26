@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--suppress NavigationFile -->
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/weatherInfoFragment">
+
+    <fragment
+        android:id="@+id/weatherInfoFragment"
+        android:name="com.example.weatherapplication.presentation.presentation.WeatherInfoFragment"
+        android:label="WeatherInfoFragment"
+        tools:layout="@layout/fragment_weather_info">
+        <action
+            android:id="@+id/action_weatherInfoFragment_to_weatherListFragment"
+            app:destination="@id/weatherListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/weatherListFragment"
+        android:name="com.example.weatherapplication.presentation.presentation.WeatherListFragment"
+        android:label="fragment_weather_list"
+        tools:layout="@layout/fragment_weather_list">
+        <argument
+            android:name="city"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_weatherListFragment_to_detailedFragment"
+            app:destination="@id/detailedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailedFragment"
+        android:name="com.example.weatherapplication.presentation.presentation.DetailedFragment"
+        android:label="DetailedFragment"
+        tools:layout="@layout/fragment_detailed">
+    <argument
+        android:name="city"
+        app:argType="string" />
+    <argument
+        android:name="temperature"
+        app:argType="string" />
+    <argument
+        android:name="weatherCondition"
+        app:argType="string" />
+    <argument
+        android:name="windSpeed"
+        app:argType="string" />
+    </fragment>
+</navigation>

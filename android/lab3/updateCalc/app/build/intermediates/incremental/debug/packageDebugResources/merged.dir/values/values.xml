@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="generation_methods">
+        <item>Generate Random Integer</item>
+        <item>Generate Random Double</item>
+        <item>Generate Random Odd Number</item>
+        <item>Generate Random Even Number</item>
+    </string-array>
+    <string-array name="operation_array">
+        <item>Addition</item>
+        <item>Subtraction</item>
+        <item>Multiplication</item>
+        <item>Division</item>
+    </string-array>
+    <color name="black">#FF000000</color>
+    <color name="ic_launcher_background">#FBB136</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="Division">Division</string>
+    <string name="addition">Addition</string>
+    <string name="app_name">Calculator12</string>
+    <string name="divide_by_zero">Division by zero is not allowed</string>
+    <string name="enter_range">Enter range:</string>
+    <string name="generate_random_number">Generate random number</string>
+    <string name="generated_number_1">Generated Number 1</string>
+    <string name="generated_number_2">Generated Number 2</string>
+    <string name="generated_numbers">Generated Numbers:</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="max">Max</string>
+    <string name="min">Min</string>
+    <string name="multiplication">Multiplication</string>
+    <string name="perform_operation">Perform Operation</string>
+    <string name="random_double">Generate Random Double</string>
+    <string name="random_even">Generate Random Even Number</string>
+    <string name="random_int">Generate Random Integer</string>
+    <string name="random_number">Random number: %d</string>
+    <string name="random_odd">Generate Random Odd Number</string>
+    <string name="result">Result: %.2f</string>
+    <string name="subtraction">Subtraction</string>
+    <style name="Base.Theme.Task33" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.Task33" parent="Base.Theme.Task33"/>
+</resources>

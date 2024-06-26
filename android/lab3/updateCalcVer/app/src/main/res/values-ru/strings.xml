@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Калькулятор12</string>
+    <string name="random_number">Рандомное число: %.d</string>
+    <string name="result">Результат: %.2f</string>
+    <string name="divide_by_zero">Не дели на ноль</string>
+    <string name="addition">Сложение</string>
+    <string name="subtraction">Вычитание</string>
+    <string name="multiplication">Умножение</string>
+    <string name="Division">Деление</string>
+    <string name="random_int">Генери рандомный инт</string>
+    <string name="random_double">Генери рандомный дабл</string>
+    <string name="random_odd">Генери неченое</string>
+    <string name="random_even">Генери четное</string>
+    <string name="perform_operation">Perform Operation</string>
+    <string name="enter_range">Enter range:</string>
+    <string name="min">Мин</string>
+    <string name="max">Макс</string>
+    <string name="generated_numbers">Сгенерированные числа:</string>
+    <string name="generated_number_1">Сгенерированное число 1</string>
+    <string name="generated_number_2">Сгенерированное число 2</string>
+    <string name="generate_random_number">Сгенерироать рандомное число</string>
+    <string name="calculator">Use calculator</string>
+    <string name="history">Show history</string>
+</resources>

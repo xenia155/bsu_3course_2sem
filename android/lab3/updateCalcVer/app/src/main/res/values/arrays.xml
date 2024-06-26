@@ -1,0 +1,15 @@
+<resources>
+    <string-array name="operation_array">
+        <item>Addition</item>
+        <item>Subtraction</item>
+        <item>Multiplication</item>
+        <item>Division</item>
+    </string-array>
+
+    <string-array name="generation_methods">
+        <item>Generate Random Integer</item>
+        <item>Generate Random Double</item>
+        <item>Generate Random Odd Number</item>
+        <item>Generate Random Even Number</item>
+    </string-array>
+</resources>

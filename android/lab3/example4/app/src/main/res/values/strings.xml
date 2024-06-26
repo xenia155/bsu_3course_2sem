@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Tabs</string>
+    <string name="text1">Lenta</string>
+    <string name="text2">Photo</string>
+    <string name="text3">Map</string>
+    <string name="photo">2 Photo</string>
+    <string name="map">3 Map</string>
+    <string name="lenta" >1 Lenta</string>
+</resources>
