@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="Submission" content="E14OGWHHCUQ6VIRDRPDAXEEH2"/>
+<meta name="Time" content="2024-03-28T10:41:48Z"/>
+<meta name="ID" content="WordList"/>
+<meta name="User" content="vyto-baby-vodo-rena"/>
+<meta name="Problem" content="wiley/codecheck-bj-4-concur-105"/>
+<meta name="Elapsed" content="3216 ms"/>
+<style type="text/css">
+.header {font-weight: bold; font-size: 1.2em; }
+.item {font-weight: bold;}
+.pass {color: green;}
+.fail {color: red;}
+.note {color: blue; font-weight: bold;}
+table.file td {padding-right: 1em; background: #FFF; }
+.linenumber {color: gray;}
+.footnote {font-size: 0.7em;}
+table {font-size: 0.9em;}
+td, th { background: #EEE; margin: 0.5em; padding: 0.25em;}
+table.output td {vertical-align: top;}
+div.footnotes { border-top: 1px solid gray; padding-top: 0.5em; }
+</style>
+<title>Report</title>
+</head>
+<body>
+<p class="header run">Running WordList.java</p>
+<div class="run">
+<pre class="output">[And, It, Mary, a, against, and, as, at, children, day, day,, everywhere, fleece, followed, go., had, her, it, its, lamb, lamb,, laugh, little, made, one, play, play,, rules., school, school., see, snow., sure, that, the, to, was, went,, which, white]
+</pre>
+<span class="pass">pass </span></div>
+<p class="header studentFiles">Submitted files</p>
+<div class="studentFiles">
+<p class="caption">WordList.java:</p>
+<pre class="output">import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
+public class WordList {
+    public WordList(Scanner in) {
+        words = new ArrayList&lt;&gt;();
+        myLock = new ReentrantLock();
+        while (in.hasNext()) words.add(in.next());
+    }
+
+    private class Swapper implements Runnable {
+        private volatile boolean hasWork = true; // Shared flag for termination
+
+        public void run() {
+            while (hasWork) {
+                myLock.lock();
+                try {
+                    // find a pair to swap
+                    int i = 0;
+                    while (i &lt; words.size() - 1 &amp;&amp; words.get(i).compareTo(words.get(i + 1)) &lt;= 0)
+                        i++;
+                    if (i &lt; words.size() - 1) {
+                        String word1 = words.get(i);
+                        String word2 = words.get(i + 1);
+                        words.set(i, word2);
+                        words.set(i + 1, word1);
+                    } else {
+                        hasWork = false; // No work left, terminate the thread
+                    }
+                } finally {
+                    myLock.unlock();
+                }
+            }
+        }
+    }
+
+    private class DupeRemover implements Runnable {
+        private volatile boolean hasWork = true; // Shared flag for termination
+
+        public void run() {
+            while (hasWork) {
+                myLock.lock();
+                try {
+                    // find a duplicate
+                    Set&lt;String&gt; uniqueWords = new HashSet&lt;&gt;(words);
+                    ArrayList&lt;String&gt; newWords = new ArrayList&lt;&gt;(uniqueWords);
+                    if (newWords.size() &lt; words.size()) {
+                        words = newWords;
+                    } else {
+                        hasWork = false; // No work left, terminate the thread
+                    }
+                } finally {
+                    myLock.unlock();
+                }
+            }
+        }
+    }
+
+    public void slowSort() throws InterruptedException {
+        Runnable r1 = new Swapper();
+        Runnable r2 = new DupeRemover();
+        Thread t1 = new Thread(r1);
+        Thread t2 = new Thread(r2);
+        t1.start();
+        t2.start();
+        t1.join();
+        t2.join();
+        System.out.println(words);
+    }
+
+    private ArrayList&lt;String&gt; words;
+    private Lock myLock;
+
+    public static void main(String[] args) throws IOException, InterruptedException {
+        Scanner in = new Scanner(new FileReader("data.txt"));
+        WordList list = new WordList(in);
+        list.slowSort();
+    }
+}
+</pre>
+</div>
+<p class="header providedFiles">Provided files</p>
+<div class="providedFiles">
+<p class="caption">data.txt:</p>
+<pre class="output">Mary had a little lamb,
+little lamb, little lamb,
+Mary had a little lamb, its fleece was white as snow.
+And everywhere that Mary went,
+Mary went, Mary went,
+and everywhere that Mary went, the lamb was sure to go.
+
+It followed her to school one day
+school one day, school one day,
+It followed her to school one day, which was against the rules.
+It made the children laugh and play,
+laugh and play, laugh and play,
+it made the children laugh and play to see a lamb at school. 
+</pre>
+</div>
+<p class="header score">Score</p>
+<div class="score">
+<p class="score">1/1</p>
+</div>
+<div class="footnotes"><div class="footnote">2024-03-28T10:41:48Z</div>
+</div>
+</body></html>

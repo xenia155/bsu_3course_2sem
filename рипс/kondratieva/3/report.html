@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="Submission" content="ADQDNPYMDSGLKTINO32NKYIV"/>
+<meta name="Time" content="2024-03-28T10:38:00Z"/>
+<meta name="ID" content="DataSet"/>
+<meta name="User" content="vyto-baby-vodo-rena"/>
+<meta name="Problem" content="wiley/codecheck-bj-4-concur-102"/>
+<meta name="Elapsed" content="3199 ms"/>
+<style type="text/css">
+.header {font-weight: bold; font-size: 1.2em; }
+.item {font-weight: bold;}
+.pass {color: green;}
+.fail {color: red;}
+.note {color: blue; font-weight: bold;}
+table.file td {padding-right: 1em; background: #FFF; }
+.linenumber {color: gray;}
+.footnote {font-size: 0.7em;}
+table {font-size: 0.9em;}
+td, th { background: #EEE; margin: 0.5em; padding: 0.25em;}
+table.output td {vertical-align: top;}
+div.footnotes { border-top: 1px solid gray; padding-top: 0.5em; }
+</style>
+<title>Report</title>
+</head>
+<body>
+<p class="header run">Running DataSet.java</p>
+<div class="run">
+<pre class="output">4999999.5
+</pre>
+<span class="pass">pass </span></div>
+<p class="header studentFiles">Submitted files</p>
+<div class="studentFiles">
+<p class="caption">DataSet.java:</p>
+<pre class="output">import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
+public class DataSet {
+    /**
+     * Constructs an empty data set.
+     */
+    public DataSet(double[] values) {
+        sum = 0;
+        this.values = values;
+        myLock = new ReentrantLock();
+    }
+
+    private class RangeProcessor implements Runnable {
+        public RangeProcessor(int start, int end) {
+            this.start = start;
+            this.end = Math.min(end, values.length);
+        }
+
+        public void run() {
+            double total = 0;
+            for (int i = start; i &lt; end; i++)
+                total += values[i];
+            
+            // Acquire the lock before updating shared variables
+            myLock.lock();
+            try {
+                sum += total;
+                completionCount++;
+            } finally {
+                // Release the lock
+                myLock.unlock();
+            }
+        }
+
+        private int start;
+        private int end;
+    }
+
+    /**
+     * Gets the average of the added data.
+     *
+     * @return the average or 0 if no data has been added
+     */
+    public double getAverage() {
+        if (values.length == 0) return 0;
+
+        final int THREADS = 10;
+        int size = values.length / THREADS;
+        for (int i = 0; i &lt; THREADS; i++) {
+            Runnable r = new RangeProcessor(i * size, (i + 1) * size);
+            Thread t = new Thread(r);
+            t.start();
+        }
+
+        // busy waiting is not an optimal solution
+        final int DELAY = 100;
+        try {
+            while (completionCount &lt; THREADS) {
+                Thread.sleep(DELAY);
+            }
+        } catch (InterruptedException ex) {
+            return 0;
+        }
+
+        return sum / values.length;
+    }
+
+    private double[] values;
+    private double sum;
+    private int completionCount;
+    private Lock myLock;
+
+    // this method is used to check your work
+    public static void main(String[] args) {
+        final int SIZE = 10000000;
+        double[] v = new double[SIZE];
+        for (int i = 0; i &lt; SIZE; i++) v[i] = i;
+        DataSet data = new DataSet(v);
+        double avg = data.getAverage();
+        System.out.println(avg);
+    }
+}
+
+</pre>
+</div>
+<p class="header score">Score</p>
+<div class="score">
+<p class="score">1/1</p>
+</div>
+<div class="footnotes"><div class="footnote">2024-03-28T10:38:00Z</div>
+</div>
+</body></html>

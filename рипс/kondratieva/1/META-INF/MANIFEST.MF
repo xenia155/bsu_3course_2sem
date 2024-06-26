@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Created-By: 11.0.17 (Eclipse Adoptium)
+
+Name: WordList.java
+SHA-256-Digest: cuuK+SrpR4t+6mdid0mizL4h49bmdV+LYBsazV6mEx0=
+
+Name: report.html
+SHA-256-Digest: zW3awV8H+Fx+Bf+M4HH0NFf/z0Gxivd7t8jbCbTSTeo=
+
