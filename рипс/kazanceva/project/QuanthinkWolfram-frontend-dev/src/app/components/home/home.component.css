@@ -1,0 +1,127 @@
+.sign-in-button {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 100px;
+  background-color: #ffa500;
+  color: white;
+  z-index: 1;
+}
+
+.language-container {
+  position: fixed;
+  top: -5px;
+  right: 10px;
+}
+
+.language-button {
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.language-menu {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  top: 50px;
+  right: 0;
+}
+
+.library-menu {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  top: 580px;
+  left: 420px;
+}
+
+
+.language-menu button {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.library-menu button {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.header {
+  text-align: center;
+}
+
+.logo-image {
+  width: 600px;
+  height: 300px;
+  object-fit: contain;
+margin-left: 100px;
+margin-top: 100px;
+margin-bottom: 0px;
+}
+
+.bottom-image {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+margin-left: 10px;
+margin-top: 0px;
+margin-bottom: -5px;
+}
+
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+.libraries {
+  display: flex;
+
+  align-items: center;
+  margin-right: 100px;
+  margin-top: 0px;
+  margin-bottom: 200px;
+}
+
+.libraries span {
+  margin-right: 100px;
+  font-size: 30px;
+}
+
+.purple-text {
+  color: purple;
+}
+
+.green-text {
+  color: green;
+}
+
+.yellow-text {
+  color: yellow;
+}
+
+.turquoise-text {
+  color: turquoise;
+}
+
+.bottom-text {
+  text-align: center;
+  font-size: 16px;
+  color: grey;
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+			 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			 xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence
+        https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd" version="3.0">
+	<persistence-unit name="simpleFactory"
+					  transaction-type="RESOURCE_LOCAL">
+		<provider>
+			org.eclipse.persistence.jpa.PersistenceProvider
+		</provider>
+		<class>by.quantumquartet.quanthink.model.User</class>
+		<class>by.quantumquartet.quanthink.model.Request</class>
+
+		<properties>
+
+			<property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
+
+			<property name="jakarta.persistence.jdbc.url"
+					  value="jdbc:mysql://sql11.freesqldatabase.com:3306/sql11690136"/>
+			<property name="jakarta.persistence.jdbc.user" value="sql11690136"/>
+
+			<property name="jakarta.persistence.jdbc.password" value="STZZGvHT7n"/>
+
+		</properties>
+	</persistence-unit>
+
+</persistence>

@@ -1,0 +1,52 @@
+<div class="header">
+  <div class="icon-container">
+    <p-button *ngIf="isLoggedIn(); else loginButton" label="{{ getTranslation('Sign out') }}" (onClick)="logOut()" class="sign-in-button"></p-button>
+    <ng-template #loginButton>
+      <p-button label="{{ getTranslation('Sign in') }}" (onClick)="logOut()" class="sign-in-button"></p-button>
+    </ng-template>
+    <img src="assets/icons/5.png" alt="Logo" class="logo-image">
+  </div>
+</div>
+
+<div class="language-container">
+  <button class="language-button" (click)="toggleLanguageMenu()">
+    <img src="assets/icons/change_language.png" alt="Language" class="language-image">
+  </button>
+  <div *ngIf="showLanguageMenu" class="language-menu">
+    <button (click)="changeLanguage('ru')">{{ getTranslation('Русский') }}</button>
+    <button (click)="changeLanguage('by')">{{ getTranslation('Белорусский') }}</button>
+    <button (click)="changeLanguage('en')">{{ getTranslation('English') }}</button>
+  </div>
+</div>
+
+<div class="center-content">
+  <app-input>    
+  </app-input>
+</div>
+
+<div class="footer">
+  <div class="libraries">
+    <div [ngSwitch]="selectedLibrary">
+      <img  *ngSwitchCase="'JAVA'" src="assets/icons/java.png" alt="LibLogo">
+      <img *ngSwitchCase="'C_PLUS_PLUS'" src="assets/icons/cpp.png" alt="LibLogo">
+      </div>
+    <span class="purple-text" (click)="toggleLibraryMenu()">{{ getTranslation('Choose your library') }} &gt;</span>
+    <div *ngIf="showlibraryMenu" class="library-menu">
+      <button (click)="changeLibrary('JAVA')">Java</button>
+      <button (click)="changeLibrary('C_PLUS_PLUS')">C++</button>     
+    </div>
+    <span class="green-text">{{ getTranslation('History') }} &gt;</span>
+    <span class="yellow-text">{{ getTranslation('Settings') }} &gt;</span>
+    <span class="turquoise-text" (click)="goToChat()">{{ getTranslation('Online Chat') }} &gt;</span>
+  </div>
+</div>
+
+<div class="bottom-text">
+  <p class="gray-text">&copy;{{ getTranslation('Resources & Tools About Contact Connect') }}
+    <img src="assets/icons/facebook.png" alt="Logo" class="bottom-image">
+    <img src="assets/icons/twitter.png" alt="Logo" class="bottom-image">
+    <img src="assets/icons/telegram.png" alt="Logo" class="bottom-image">
+    <img src="assets/icons/instagram.png" alt="Logo" class="bottom-image">
+  </p>
+  <p class="gray-text">&copy;2024 QuanThink Wolfram {{ getTranslation('Terms Privacy') }}</p>
+</div>

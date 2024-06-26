@@ -1,0 +1,47 @@
+<form [formGroup]="loginForm" (ngSubmit)="loginUser()" class="orange-form">
+  <p-card header="{{ getTranslation('Sign In') }}" [style]="{ width: '360px', color: 'orange-form' }">
+    <div class="field">
+      <label for="email">{{ getTranslation('Email') }}</label>
+      <input
+        type="text"
+        pInputText
+        formControlName="email"
+        class="w-full"
+        name="email"
+        placeholder="{{ getTranslation('Type your email') }}"
+      />
+      <small
+        *ngIf="email.invalid && (email.dirty || email.touched)"
+        class="block p-error"
+      >
+        <div *ngIf="email.errors?.['required']">{{ getTranslation('Email is required.') }}</div>
+        <div *ngIf="email.errors?.['email']">{{ getTranslation('Email should be valid') }}</div>
+      </small>
+    </div>
+    <div class="field">
+      <label for="password">{{ getTranslation('Password') }}</label>
+      <input
+        type="password"
+        pInputText
+        formControlName="password"
+        class="w-full"
+        name="password"
+        placeholder="{{ getTranslation('Type your password') }}"
+      />
+      <small
+        *ngIf="password.invalid && (password.dirty || password.touched)"
+        class="block p-error"
+      >
+        <div *ngIf="password.errors?.['required']">{{ getTranslation('Password is required.') }}</div>
+      </small>
+    </div>
+    <p-button
+      label="{{ getTranslation('SIGN IN') }}"
+      styleClass="w-full"
+      [disabled]="loginForm.invalid"
+      type="submit"
+    ></p-button>
+    <div class="mt-2">{{ getTranslation("Don't have an account?") }} <a routerLink="/register">{{ getTranslation('Create one.') }}</a></div>
+  </p-card>
+  <div>{{ inputError }}</div>
+</form>

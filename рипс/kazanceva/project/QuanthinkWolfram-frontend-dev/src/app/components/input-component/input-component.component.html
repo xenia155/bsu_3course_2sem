@@ -1,0 +1,34 @@
+<table class="flex justify-content-center align-items-center h-full" width="80%">
+  <tbody>
+    <tr>
+      <td width="80%">
+
+        <div [ngSwitch]="selectedCalculations">
+          <span *ngSwitchCase="'BA'">
+            <app-basic-arithemtic-component (resultEvent)="showResult($event)"></app-basic-arithemtic-component>
+            </span>
+            <span *ngSwitchCase="'Eq'" >
+              <app-equation-component (resultEvent)="showResult($event)"></app-equation-component>
+              </span>
+            <span  *ngSwitchCase="'M'">           
+                <app-matrix-component (resultEventM)="showResult($event)"></app-matrix-component>
+            </span>
+        </div>
+
+      </td>
+      <td width="20%">
+          <ul>
+            <li style="display:inline"><button class="btn-choice" (click)="changeCalc('BA')">{{ getTranslation('Basic Arithmetics') }}</button></li>
+            <li style="display:inline"><button class="btn-choice" (click)="changeCalc('Eq')">{{ getTranslation('Equations') }}</button></li>
+            <li style="display:inline"><button class="btn-choice" (click)="changeCalc('M')">{{ getTranslation('Matrix') }}</button></li>
+          </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<div name="result" class="result-container" *ngIf="calculationResult !== ''">
+  <p>{{ getTranslation('Result') }}:</p>
+  <p>{{ calculationResult }}</p>
+</div>

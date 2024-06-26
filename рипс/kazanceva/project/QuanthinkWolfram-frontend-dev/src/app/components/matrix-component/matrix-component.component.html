@@ -1,0 +1,252 @@
+<style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    input[type="number"] {
+        -moz-appearance: textfield;
+    }
+</style>
+<div class="math-input-container" [hidden]="!isInputFocused">
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    <div style="border:1px solid rgb(128, 114, 114); border-radius: 8px;">
+                        <table style="margin-top: 20px; margin-left: 20px; margin-right: 20px;">
+                            <tbody>
+                                <tr >
+                                    <td><input id="A00" type="number" class="matrix-el" [(ngModel)]="Matrix1[0][0]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="A01" type="number" class="matrix-el" [(ngModel)]="Matrix1[0][1]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="A02" type="number" class="matrix-el" [(ngModel)]="Matrix1[0][2]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="A03" type="number" class="matrix-el" [(ngModel)]="Matrix1[0][3]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="A04" type="number" class="matrix-el" [(ngModel)]="Matrix1[0][4]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="A05" type="number" class="matrix-el" [(ngModel)]="Matrix1[0][5]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="A06" type="number" class="matrix-el" [(ngModel)]="Matrix1[0][6]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                </tr>
+                                <tr>
+                                    <td><input id="A10" type="number" class="matrix-el" [(ngModel)]="Matrix1[1][0]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="A11" type="number" class="matrix-el" [(ngModel)]="Matrix1[1][1]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="A12" type="number" class="matrix-el" [(ngModel)]="Matrix1[1][2]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="A13" type="number" class="matrix-el" [(ngModel)]="Matrix1[1][3]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="A14" type="number" class="matrix-el" [(ngModel)]="Matrix1[1][4]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="A15" type="number" class="matrix-el" [(ngModel)]="Matrix1[1][5]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="A16" type="number" class="matrix-el" [(ngModel)]="Matrix1[1][6]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                </tr>
+                                <tr>
+                                    <td><input id="A20" type="number" class="matrix-el" [(ngModel)]="Matrix1[2][0]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="A21" type="number" class="matrix-el" [(ngModel)]="Matrix1[2][1]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="A22" type="number" class="matrix-el" [(ngModel)]="Matrix1[2][2]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="A23" type="number" class="matrix-el" [(ngModel)]="Matrix1[2][3]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="A24" type="number" class="matrix-el" [(ngModel)]="Matrix1[2][4]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="A25" type="number" class="matrix-el" [(ngModel)]="Matrix1[2][5]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="A26" type="number" class="matrix-el" [(ngModel)]="Matrix1[2][6]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                </tr>
+                                <tr>
+                                    <td><input id="A30" type="number" class="matrix-el" [(ngModel)]="Matrix1[3][0]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="A31" type="number" class="matrix-el" [(ngModel)]="Matrix1[3][1]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="A32" type="number" class="matrix-el" [(ngModel)]="Matrix1[3][2]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="A33" type="number" class="matrix-el" [(ngModel)]="Matrix1[3][3]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="A34" type="number" class="matrix-el" [(ngModel)]="Matrix1[3][4]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="A35" type="number" class="matrix-el" [(ngModel)]="Matrix1[3][5]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="A36" type="number" class="matrix-el" [(ngModel)]="Matrix1[3][6]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                </tr>
+                                <tr>
+                                    <td><input id="A40" type="number" class="matrix-el" [(ngModel)]="Matrix1[4][0]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="A41" type="number" class="matrix-el" [(ngModel)]="Matrix1[4][1]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="A42" type="number" class="matrix-el" [(ngModel)]="Matrix1[4][2]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="A43" type="number" class="matrix-el" [(ngModel)]="Matrix1[4][3]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="A44" type="number" class="matrix-el" [(ngModel)]="Matrix1[4][4]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="A45" type="number" class="matrix-el" [(ngModel)]="Matrix1[4][5]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="A46" type="number" class="matrix-el" [(ngModel)]="Matrix1[4][6]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                </tr>
+                                <tr>
+                                    <td><input id="A50" type="number" class="matrix-el" [(ngModel)]="Matrix1[5][0]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="A51" type="number" class="matrix-el" [(ngModel)]="Matrix1[5][1]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="A52" type="number" class="matrix-el" [(ngModel)]="Matrix1[5][2]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="A53" type="number" class="matrix-el" [(ngModel)]="Matrix1[5][3]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="A54" type="number" class="matrix-el" [(ngModel)]="Matrix1[5][4]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="A55" type="number" class="matrix-el" [(ngModel)]="Matrix1[5][5]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="A56" type="number" class="matrix-el" [(ngModel)]="Matrix1[5][6]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                </tr>
+                                <tr>
+                                    <td><input id="A60" type="number" class="matrix-el" [(ngModel)]="Matrix1[6][0]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="A61" type="number" class="matrix-el" [(ngModel)]="Matrix1[6][1]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="A62" type="number" class="matrix-el" [(ngModel)]="Matrix1[6][2]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="A63" type="number" class="matrix-el" [(ngModel)]="Matrix1[6][3]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="A64" type="number" class="matrix-el" [(ngModel)]="Matrix1[6][4]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="A65" type="number" class="matrix-el" [(ngModel)]="Matrix1[6][5]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="A66" type="number" class="matrix-el" [(ngModel)]="Matrix1[6][6]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td><button class="btn" (click)="clear(Matrix1)">{{ getTranslation('Clear') }}</button></td>
+                                    <td> <div style="border:1px solid rgb(128, 114, 114); border-radius: 8px; padding-top: 4px; padding-right: 4px; padding-bottom: 4px; padding-left: 4px">
+                                        {{ getTranslation('Size') }}:<select class="Arows" id="selectArows" (change)="onChangeA()" [(ngModel)]="Arows">
+                                            <option value=1>1</option>
+                                            <option value=2>2</option>
+                                            <option value=3 selected>3</option>
+                                            <option value=4>4</option>
+                                            <option value=5>5</option>
+                                            <option value=6>6</option>
+                                            <option value=7>7</option>
+                                          </select> x <select name="Acols" id="selectAcols" (change)="onChangeA()" [(ngModel)]="Acols">
+                                            <option value=1>1</option>
+                                            <option value=2>2</option>
+                                            <option value=3 selected>3</option>
+                                            <option value=4>4</option>
+                                            <option value=5>5</option>
+                                            <option value=6>6</option>
+                                            <option value=7>7</option>
+                                          </select>
+                                    </div></td>
+                                </tr>
+                                <tr>
+                                    <td><button class="btn" (click)="transpose(Matrix1, Arows, Acols)">{{ getTranslation('Transpose') }}</button></td>
+                                    <td><button class="btn" (click)="mulBy(Matrix1, Arows, Acols, MulByA)">{{ getTranslation('Multiply by') }}</button>
+                                        <input type="number" class="matrix-el" [(ngModel)]="MulByA" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                </tr>
+                                <tr>
+                                    <td><button class="btn" (click)="determinant(Matrix1, Arows, Acols)">{{ getTranslation('Determinant') }}</button></td>
+                                    <td><button class="btn" (click)="reverse(Matrix1, Arows, Acols)">{{ getTranslation('Reversed') }}</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+                <td>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <button class="btn" (click)="matrixSum()">A + B</button>
+                            </tr>
+                            <tr>
+                                <button class="btn" (click)="matrixSub()">A - B</button>
+                            </tr>
+                            <tr>
+                                <button class="btn" (click)="matrixMul()">A x B</button>
+                            </tr>
+                            <tr>
+                                <button class="btn" (click)="matrixSystem()">Ax=B</button>
+                            </tr>
+                            <tr>
+                                {{getTranslation("Thread")}}: <input type="number" class="matrix-el" [(ngModel)]="ThreadCount" (focus)="onInputFocus()" (blur)="onInputBlur()">
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td>
+                    <div style="border:1px solid rgb(128, 114, 114); border-radius: 8px;">
+                        <table style="margin-top: 20px; margin-left: 20px; margin-right: 20px;">
+                            <tbody>
+                                <tr>
+                                    <td><input id="B00" type="number" class="matrix-el" [(ngModel)]="Matrix2[0][0]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="B01" type="number" class="matrix-el" [(ngModel)]="Matrix2[0][1]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="B02" type="number" class="matrix-el" [(ngModel)]="Matrix2[0][2]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="B03" type="number" class="matrix-el" [(ngModel)]="Matrix2[0][3]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="B04" type="number" class="matrix-el" [(ngModel)]="Matrix2[0][4]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="B05" type="number" class="matrix-el" [(ngModel)]="Matrix2[0][5]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="B06" type="number" class="matrix-el" [(ngModel)]="Matrix2[0][6]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                </tr>
+                                <tr>
+                                    <td><input id="B10" type="number" class="matrix-el" [(ngModel)]="Matrix2[1][0]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="B11" type="number" class="matrix-el" [(ngModel)]="Matrix2[1][1]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="B12" type="number" class="matrix-el" [(ngModel)]="Matrix2[1][2]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="B13" type="number" class="matrix-el" [(ngModel)]="Matrix2[1][3]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="B14" type="number" class="matrix-el" [(ngModel)]="Matrix2[1][4]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="B15" type="number" class="matrix-el" [(ngModel)]="Matrix2[1][5]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="B16" type="number" class="matrix-el" [(ngModel)]="Matrix2[1][6]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                </tr>
+                                <tr>
+                                    <td><input id="B20" type="number" class="matrix-el" [(ngModel)]="Matrix2[2][0]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="B21" type="number" class="matrix-el" [(ngModel)]="Matrix2[2][1]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="B22" type="number" class="matrix-el" [(ngModel)]="Matrix2[2][2]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="B23" type="number" class="matrix-el" [(ngModel)]="Matrix2[2][3]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="B24" type="number" class="matrix-el" [(ngModel)]="Matrix2[2][4]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="B25" type="number" class="matrix-el" [(ngModel)]="Matrix2[2][5]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="B26" type="number" class="matrix-el" [(ngModel)]="Matrix2[2][6]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                </tr>
+                                <tr>
+                                    <td><input id="B30" type="number" class="matrix-el" [(ngModel)]="Matrix2[3][0]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="B31" type="number" class="matrix-el" [(ngModel)]="Matrix2[3][1]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="B32" type="number" class="matrix-el" [(ngModel)]="Matrix2[3][2]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="B33" type="number" class="matrix-el" [(ngModel)]="Matrix2[3][3]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="B34" type="number" class="matrix-el" [(ngModel)]="Matrix2[3][4]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="B35" type="number" class="matrix-el" [(ngModel)]="Matrix2[3][5]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="B36" type="number" class="matrix-el" [(ngModel)]="Matrix2[3][6]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                </tr>
+                                <tr>
+                                    <td><input id="B40" type="number" class="matrix-el" [(ngModel)]="Matrix2[4][0]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="B41" type="number" class="matrix-el" [(ngModel)]="Matrix2[4][1]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="B42" type="number" class="matrix-el" [(ngModel)]="Matrix2[4][2]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="B43" type="number" class="matrix-el" [(ngModel)]="Matrix2[4][3]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="B44" type="number" class="matrix-el" [(ngModel)]="Matrix2[4][4]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="B45" type="number" class="matrix-el" [(ngModel)]="Matrix2[4][5]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="B46" type="number" class="matrix-el" [(ngModel)]="Matrix2[4][6]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                </tr>
+                                <tr>
+                                    <td><input id="B50" type="number" class="matrix-el" [(ngModel)]="Matrix2[5][0]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="B51" type="number" class="matrix-el" [(ngModel)]="Matrix2[5][1]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="B52" type="number" class="matrix-el" [(ngModel)]="Matrix2[5][2]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="B53" type="number" class="matrix-el" [(ngModel)]="Matrix2[5][3]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="B54" type="number" class="matrix-el" [(ngModel)]="Matrix2[5][4]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="B55" type="number" class="matrix-el" [(ngModel)]="Matrix2[5][5]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="B56" type="number" class="matrix-el" [(ngModel)]="Matrix2[5][6]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                </tr>
+                                <tr>
+                                    <td><input id="B60" type="number" class="matrix-el" [(ngModel)]="Matrix2[6][0]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="B61" type="number" class="matrix-el" [(ngModel)]="Matrix2[6][1]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="B62" type="number" class="matrix-el" [(ngModel)]="Matrix2[6][2]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="B63" type="number" class="matrix-el" [(ngModel)]="Matrix2[6][3]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="B64" type="number" class="matrix-el" [(ngModel)]="Matrix2[6][4]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="B65" type="number" class="matrix-el" [(ngModel)]="Matrix2[6][5]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                    <td><input id="B66" type="number" class="matrix-el" [(ngModel)]="Matrix2[6][6]" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td><button class="btn" (click)="clear(Matrix2)">{{ getTranslation('Clear') }}</button></td>
+                                    <td> <div style="border:1px solid rgb(128, 114, 114); border-radius: 8px; padding-top: 4px; padding-right: 4px; padding-bottom: 4px; padding-left: 4px">
+                                        {{ getTranslation('Size') }}:<select class="Arows" id="selectArows" (change)="onChangeB()" [(ngModel)]="Brows">
+                                            <option value=1>1</option>
+                                            <option value=2>2</option>
+                                            <option value=3 selected>3</option>
+                                            <option value=4>4</option>
+                                            <option value=5>5</option>
+                                            <option value=6>6</option>
+                                            <option value=7>7</option>
+                                          </select> x <select name="Acols" id="selectAcols" (change)="onChangeB()" [(ngModel)]="Bcols">
+                                            <option value=1>1</option>
+                                            <option value=2>2</option>
+                                            <option value=3 selected>3</option>
+                                            <option value=4>4</option>
+                                            <option value=5>5</option>
+                                            <option value=6>6</option>
+                                            <option value=7>7</option>
+                                          </select>
+                                    </div></td>
+                                </tr>
+                                <tr>
+                                    <td><button class="btn" (click)="transpose(Matrix2, Brows, Bcols)">{{ getTranslation('Transpose') }}</button></td>
+                                    <td><button class="btn" (click)="mulBy(Matrix2, Brows, Bcols, MulByB)">{{ getTranslation('Multiply by') }}</button>
+                                        <input type="number" class="matrix-el" [(ngModel)]="MulByB" (focus)="onInputFocus()" (blur)="onInputBlur()"></td>
+                                </tr>
+                                <tr>
+                                    <td><button class="btn" (click)="determinant(Matrix2, Brows, Bcols)">{{ getTranslation('Determinant') }}</button></td>
+                                    <td><button class="btn" (click)="reverse(Matrix2, Brows, Bcols)">{{ getTranslation('Reversed') }}</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

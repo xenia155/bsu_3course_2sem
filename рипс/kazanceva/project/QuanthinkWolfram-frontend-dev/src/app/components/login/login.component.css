@@ -1,0 +1,46 @@
+.field label {
+  color: orange;
+}
+
+.field input[type="text"],
+.field input[type="password"] {
+  border-color: orange;
+}
+
+.field input[type="text"]:focus,
+.field input[type="password"]:focus {
+  border-color: orange;
+}
+
+button[type="submit"] {
+  background-color: orange;
+  color: white;
+}
+
+.mt-2 a {
+  color: orange;
+}
+
+.bottom-image {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+margin-bottom: -33px;
+margin-left: 10px;
+margin-top: 100px;
+}
+
+.bottom-text {
+  text-align: center;
+  font-size: 16px;
+  color: grey;
+margin-top: 50px;
+}
+.bottom-image {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+margin-left: 10px;
+margin-top: 0px;
+margin-bottom: -5px;
+}

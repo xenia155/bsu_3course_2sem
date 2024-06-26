@@ -1,0 +1,50 @@
+version: '3.6'
+
+services:
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: quanthink_wolfram
+      MYSQL_ROOT_USERNAME: root
+      MYSQL_ROOT_PASSWORD: 11111111
+    ports:
+      - "3307:3306"
+    volumes:
+      - /home/Docker/Volumes/Mysql/lib/mysql
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "mysql", "-uroot", "-p11111111", "-e", "select 1"]
+      interval: 1s
+      retries: 120
+
+  app:
+    image: new-spring-boot-app:latest
+    build:
+      context: ./QuanthinkWolfram-backend
+      dockerfile: Dockerfile
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql/quanthink_wolfram
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: 11111111
+    ports:
+      - 8080:8080
+    networks:
+      - app-network
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+  app-ui:
+    image: new-angular-front-end:latest
+    build: ./QuanthinkWolfram-frontend-dev
+    ports:
+      - 4200:4200
+    depends_on:
+      - app
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

@@ -1,0 +1,23 @@
+<div class="chat-container">
+
+  <!-- Форма отображения предыдущих сообщений -->
+  <div class="previous-messages-container">
+    <div *ngFor="let message of messages" class="previous-message">
+      <div class="previous-message-sender">{{ message.sender }}</div>
+      <div class="previous-message-content">{{ message.content }}</div>
+      <div class="previous-message-timestamp">{{ message.timestamp }}</div>
+    </div>
+  </div>
+
+  <div class="messages-container">
+    <div *ngFor="let message of messages" class="message">
+      <div class="message-sender">{{ message.sender }}</div>
+      <div class="message-content">{{ message.content }}</div>
+      <div class="message-timestamp">{{ message.timestamp }}</div>
+    </div>
+  </div>
+  <div class="input-container">
+    <input [(ngModel)]="newMessage" placeholder="Type a message..." class="message-input">
+    <button (click)="sendMessage(newMessage)" class="send-button">Send</button>
+  </div>
+</div>

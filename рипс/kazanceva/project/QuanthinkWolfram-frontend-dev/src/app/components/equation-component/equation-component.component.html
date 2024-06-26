@@ -1,0 +1,41 @@
+<div class="input-container">
+    <input type="text" placeholder="{{ getTranslation('Enter what you want to calculate or know about') }}" [(ngModel)]="inputValue" (focus)="onInputFocus()" (blur)="onInputBlur()">
+    <button class="btn orange-bg" (click)="calculateEquation()">{{ getTranslation('=') }}</button>
+  </div>            
+  <div class="math-input-container" [hidden]="!isInputFocused">
+    <table>
+      <tbody>
+        <tr>
+          <td><button class="btn" (click)="addCharacter('1')">2</button></td>
+          <td><button class="btn" (click)="addCharacter('2')">2</button></td>
+          <td><button class="btn" (click)="addCharacter('3')">3</button></td>
+          <td><button class="btn" (click)="addCharacter('(')">(</button></td>
+          <td><button class="btn" (click)="addCharacter(')')">)</button></td>
+          <td><button class="btn" (click)="addCharacter('^')">^</button></td>
+        </tr>
+        <tr>
+          <td><button class="btn" (click)="addCharacter('4')">4</button></td>
+          <td><button class="btn" (click)="addCharacter('5')">5</button></td>
+          <td><button class="btn" (click)="addCharacter('6')">6</button></td>
+          <td><button class="btn" (click)="addCharacter('+')">+</button></td>
+          <td><button class="btn" (click)="addCharacter('-')">-</button></td>
+          <td><button class="btn" (click)="addCharacter('π')">π</button></td>
+        </tr>
+        <tr>
+          <td><button class="btn" (click)="addCharacter('7')">7</button></td>
+          <td><button class="btn" (click)="addCharacter('8')">8</button></td>
+          <td><button class="btn" (click)="addCharacter('9')">9</button></td>
+          <td><button class="btn" (click)="addCharacter('*')">*</button></td>
+          <td><button class="btn" (click)="addCharacter('/')">/</button></td>
+          <td><button class="btn" (click)="addCharacter('e')">e</button></td>
+        </tr>
+        <tr>
+          <td><button class="btn" (click)="addCharacter('0')">0</button></td>
+          <td><button class="btn" (click)="addCharacter('.')">.</button></td>
+          <td><button class="btn" (click)="clearInput()">{{ getTranslation('C') }}</button></td>
+          <td><button class="btn" (click)="addCharacter('x')">{{ getTranslation('x') }}</button></td>
+          <td colspan="2"><button class="btn" (click)="deleteLastCharacter()">{{ getTranslation('Backspace') }}</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
