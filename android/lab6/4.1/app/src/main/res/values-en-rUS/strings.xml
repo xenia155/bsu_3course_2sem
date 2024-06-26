@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Guess the number!</string>
+    <string name="behind">Too little!</string>
+    <string name="ahead">Too much!</string>
+    <string name="hit">Strike!</string>
+    <string name="input_value">Enter value!</string>
+    <string name="play_more">Play more!</string>
+    <string name="try_to_guess">Try to guess the number (1 &#8211; 200)</string>
+    <string name="error">Invalid input!</string>
+    <string name="invalid_range">The number must be between (1 &#8211; 200)!</string>
+    <string name="win">You have won!</string>
+    <string name="congrats">Congratulations!</string>
+    <string name="lose">You have lost!</string>
+    <string name="tooooMuch">May be that is not yours</string>
+    <string name="prompt_email">Enter email</string>
+    <string name="prompt_password">Enter password</string>
+    <string name="error_invalid_password">Invalid password</string>
+    <string name="error_field_required">Field required</string>
+    <string name="error_invalid_email">Invalid email</string>
+    <string name="action_sign_in">Log in</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="log_out">Log out</string>
+    <string name="info">Preference info</string>
+</resources>

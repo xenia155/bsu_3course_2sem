@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Угадай число!</string>
+    <string name="behind">Недолёт!</string>
+    <string name="ahead">Перелёт!</string>
+    <string name="hit">В точку!</string>
+    <string name="input_value">Ввести значение!</string>
+    <string name="play_more">Сыграть ещё!</string>
+    <string name="try_to_guess">Попробуйте угадать число (1 &#8211; 200)</string>
+    <string name="error">Неверный ввод!</string>
+    <string name="invalid_range">Число должно быть в диапазоне (1 &#8211; 200)!</string>
+    <string name="win">Вы выиграли!</string>
+    <string name="congrats">Поздравляем!</string>
+    <string name="lose">Вы проиграли!</string>
+    <string name="tooooMuch">Может это не ваше</string>
+    <string name="prompt_email">Введите почту</string>
+    <string name="prompt_password">Введите пароль</string>\
+    <string name="error_invalid_password">Неверный пароль</string>
+    <string name="error_field_required">Пустое поле недопустимо</string>
+    <string name="error_invalid_email">Неверная почта</string>
+    <string name="action_sign_in">Войти</string>
+    <string name="remember_me">Запомнить меня</string>
+    <string name="log_out">Выйти</string>
+    <string name="info">Информация</string>
+</resources>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <EditText
+        android:id="@+id/nomInput"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:hint="Nom de l'enseignant"
+        android:inputType="text"/>
+    <EditText
+        android:id="@+id/prenomInput"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:hint="Prénom de l'enseignant"
+        android:inputType="text"/>
+    <EditText
+        android:id="@+id/courrielInput"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:hint="Courriel de l'enseignant"
+        android:inputType="textEmailAddress"/>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="92dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_marginBottom="32dp"
+        android:weightSum="1">
+        <Button
+            android:id="@+id/addEnseignantBtn"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.4"
+            android:onClick="addEnseignant"
+            android:layout_marginEnd="10dp"
+            android:text="Ajouter un enseignant" />
+        <Button
+            android:id="@+id/showEnseignantBtn"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.4"
+            android:layout_marginStart="10dp"
+            android:onClick="showEnseignants"
+            android:text="Voir les enseignants" />
+    </LinearLayout>
+</LinearLayout>

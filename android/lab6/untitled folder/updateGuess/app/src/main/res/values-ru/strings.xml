@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="behind">Число меньше введенного!</string>
+    <string name="try_to_guess">Попробуйте угадать число(1 &#8211; 200)</string>
+    <string name="ahead">Число больше введенного!</string>
+    <string name="hit">ДА ЭТО ОНО</string>
+    <string name="input_value">Введите число</string>
+    <string name="guess">Угадай</string>
+    <string name="play_more">Играть еще</string>
+    <string name="error_empty_str">Вы ничего не ввели!</string>
+    <string name="error_too_big">Вы ввели число больше чем 200!</string>
+    <string name="error_too_small">Вы ввели число меньше 1!</string>
+</resources>

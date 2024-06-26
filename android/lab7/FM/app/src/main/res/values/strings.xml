@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TopFM</string>
+    <string-array name="artists">
+        <item>Rammstein</item>
+        <item>Morgenstern</item>
+        <item>Michael Jackson</item>
+    </string-array>
+</resources>
